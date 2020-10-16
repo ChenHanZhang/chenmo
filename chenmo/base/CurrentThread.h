@@ -18,7 +18,7 @@ namespace CurrentThread {
     extern __thread char t_tidString[32];
     extern __thread int t_tidStringLength;
     extern __thread const char* t_threadName;
-    void cacheTid();
+    void cacheTid();    // 这个函数将会在 Thread.cc 下实现，调用系统的 gettid
 
     inline int tid()
     {
@@ -29,7 +29,7 @@ namespace CurrentThread {
 
     if (__builtin_expect(t_cachedTid == 0, 0))
     {
-        // cacheTid();
+        cacheTid();
     }
     return t_cachedTid;
     }

@@ -5,6 +5,11 @@ set(base_SRCS
         LogStream.cc
         Timestamp.cc
         TimeZone.cc
+        Condition.cc
+        CountDownLatch.cc
+        Date.cc
+        Exception.cc
+        Thread.cc
         )
 
 add_library(chenmo_base ${base_SRCS})

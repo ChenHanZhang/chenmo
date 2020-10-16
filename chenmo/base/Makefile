@@ -182,6 +182,60 @@ chenmo_base/fast:
 	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/base/CMakeFiles/chenmo_base.dir/build.make chenmo/base/CMakeFiles/chenmo_base.dir/build
 .PHONY : chenmo_base/fast
 
+Condition.o: Condition.cc.o
+
+.PHONY : Condition.o
+
+# target to build an object file
+Condition.cc.o:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/base/CMakeFiles/chenmo_base.dir/build.make chenmo/base/CMakeFiles/chenmo_base.dir/Condition.cc.o
+.PHONY : Condition.cc.o
+
+Condition.i: Condition.cc.i
+
+.PHONY : Condition.i
+
+# target to preprocess a source file
+Condition.cc.i:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/base/CMakeFiles/chenmo_base.dir/build.make chenmo/base/CMakeFiles/chenmo_base.dir/Condition.cc.i
+.PHONY : Condition.cc.i
+
+Condition.s: Condition.cc.s
+
+.PHONY : Condition.s
+
+# target to generate assembly for a file
+Condition.cc.s:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/base/CMakeFiles/chenmo_base.dir/build.make chenmo/base/CMakeFiles/chenmo_base.dir/Condition.cc.s
+.PHONY : Condition.cc.s
+
+CountDownLatch.o: CountDownLatch.cc.o
+
+.PHONY : CountDownLatch.o
+
+# target to build an object file
+CountDownLatch.cc.o:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/base/CMakeFiles/chenmo_base.dir/build.make chenmo/base/CMakeFiles/chenmo_base.dir/CountDownLatch.cc.o
+.PHONY : CountDownLatch.cc.o
+
+CountDownLatch.i: CountDownLatch.cc.i
+
+.PHONY : CountDownLatch.i
+
+# target to preprocess a source file
+CountDownLatch.cc.i:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/base/CMakeFiles/chenmo_base.dir/build.make chenmo/base/CMakeFiles/chenmo_base.dir/CountDownLatch.cc.i
+.PHONY : CountDownLatch.cc.i
+
+CountDownLatch.s: CountDownLatch.cc.s
+
+.PHONY : CountDownLatch.s
+
+# target to generate assembly for a file
+CountDownLatch.cc.s:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/base/CMakeFiles/chenmo_base.dir/build.make chenmo/base/CMakeFiles/chenmo_base.dir/CountDownLatch.cc.s
+.PHONY : CountDownLatch.cc.s
+
 CurrentThread.o: CurrentThread.cc.o
 
 .PHONY : CurrentThread.o
@@ -236,6 +290,33 @@ Date.cc.s:
 	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/base/CMakeFiles/chenmo_base.dir/build.make chenmo/base/CMakeFiles/chenmo_base.dir/Date.cc.s
 .PHONY : Date.cc.s
 
+Exception.o: Exception.cc.o
+
+.PHONY : Exception.o
+
+# target to build an object file
+Exception.cc.o:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/base/CMakeFiles/chenmo_base.dir/build.make chenmo/base/CMakeFiles/chenmo_base.dir/Exception.cc.o
+.PHONY : Exception.cc.o
+
+Exception.i: Exception.cc.i
+
+.PHONY : Exception.i
+
+# target to preprocess a source file
+Exception.cc.i:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/base/CMakeFiles/chenmo_base.dir/build.make chenmo/base/CMakeFiles/chenmo_base.dir/Exception.cc.i
+.PHONY : Exception.cc.i
+
+Exception.s: Exception.cc.s
+
+.PHONY : Exception.s
+
+# target to generate assembly for a file
+Exception.cc.s:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/base/CMakeFiles/chenmo_base.dir/build.make chenmo/base/CMakeFiles/chenmo_base.dir/Exception.cc.s
+.PHONY : Exception.cc.s
+
 LogStream.o: LogStream.cc.o
 
 .PHONY : LogStream.o
@@ -289,6 +370,33 @@ Logging.s: Logging.cc.s
 Logging.cc.s:
 	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/base/CMakeFiles/chenmo_base.dir/build.make chenmo/base/CMakeFiles/chenmo_base.dir/Logging.cc.s
 .PHONY : Logging.cc.s
+
+Thread.o: Thread.cc.o
+
+.PHONY : Thread.o
+
+# target to build an object file
+Thread.cc.o:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/base/CMakeFiles/chenmo_base.dir/build.make chenmo/base/CMakeFiles/chenmo_base.dir/Thread.cc.o
+.PHONY : Thread.cc.o
+
+Thread.i: Thread.cc.i
+
+.PHONY : Thread.i
+
+# target to preprocess a source file
+Thread.cc.i:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/base/CMakeFiles/chenmo_base.dir/build.make chenmo/base/CMakeFiles/chenmo_base.dir/Thread.cc.i
+.PHONY : Thread.cc.i
+
+Thread.s: Thread.cc.s
+
+.PHONY : Thread.s
+
+# target to generate assembly for a file
+Thread.cc.s:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/base/CMakeFiles/chenmo_base.dir/build.make chenmo/base/CMakeFiles/chenmo_base.dir/Thread.cc.s
+.PHONY : Thread.cc.s
 
 TimeZone.o: TimeZone.cc.o
 
@@ -358,18 +466,30 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... chenmo_base"
+	@echo "... Condition.o"
+	@echo "... Condition.i"
+	@echo "... Condition.s"
+	@echo "... CountDownLatch.o"
+	@echo "... CountDownLatch.i"
+	@echo "... CountDownLatch.s"
 	@echo "... CurrentThread.o"
 	@echo "... CurrentThread.i"
 	@echo "... CurrentThread.s"
 	@echo "... Date.o"
 	@echo "... Date.i"
 	@echo "... Date.s"
+	@echo "... Exception.o"
+	@echo "... Exception.i"
+	@echo "... Exception.s"
 	@echo "... LogStream.o"
 	@echo "... LogStream.i"
 	@echo "... LogStream.s"
 	@echo "... Logging.o"
 	@echo "... Logging.i"
 	@echo "... Logging.s"
+	@echo "... Thread.o"
+	@echo "... Thread.i"
+	@echo "... Thread.s"
 	@echo "... TimeZone.o"
 	@echo "... TimeZone.i"
 	@echo "... TimeZone.s"
