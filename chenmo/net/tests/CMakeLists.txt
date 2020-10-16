@@ -1,0 +1,2 @@
+add_executable(eventloop_unittest Eventloop_unittest.cc)
+target_link_libraries(eventloop_unittest chenmo_net)
