@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+chenmo/net/tests/CMakeFiles/reactor_unittest.dir/rule:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f CMakeFiles/Makefile2 chenmo/net/tests/CMakeFiles/reactor_unittest.dir/rule
+.PHONY : chenmo/net/tests/CMakeFiles/reactor_unittest.dir/rule
+
+# Convenience name for target.
+reactor_unittest: chenmo/net/tests/CMakeFiles/reactor_unittest.dir/rule
+
+.PHONY : reactor_unittest
+
+# fast build rule for target.
+reactor_unittest/fast:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/reactor_unittest.dir/build.make chenmo/net/tests/CMakeFiles/reactor_unittest.dir/build
+.PHONY : reactor_unittest/fast
+
+# Convenience name for target.
 chenmo/net/tests/CMakeFiles/eventloop_unittest.dir/rule:
 	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f CMakeFiles/Makefile2 chenmo/net/tests/CMakeFiles/eventloop_unittest.dir/rule
 .PHONY : chenmo/net/tests/CMakeFiles/eventloop_unittest.dir/rule
@@ -209,6 +224,33 @@ Eventloop_unittest.cc.s:
 	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/eventloop_unittest.dir/build.make chenmo/net/tests/CMakeFiles/eventloop_unittest.dir/Eventloop_unittest.cc.s
 .PHONY : Eventloop_unittest.cc.s
 
+Reactor_unittest.o: Reactor_unittest.cc.o
+
+.PHONY : Reactor_unittest.o
+
+# target to build an object file
+Reactor_unittest.cc.o:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/reactor_unittest.dir/build.make chenmo/net/tests/CMakeFiles/reactor_unittest.dir/Reactor_unittest.cc.o
+.PHONY : Reactor_unittest.cc.o
+
+Reactor_unittest.i: Reactor_unittest.cc.i
+
+.PHONY : Reactor_unittest.i
+
+# target to preprocess a source file
+Reactor_unittest.cc.i:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/reactor_unittest.dir/build.make chenmo/net/tests/CMakeFiles/reactor_unittest.dir/Reactor_unittest.cc.i
+.PHONY : Reactor_unittest.cc.i
+
+Reactor_unittest.s: Reactor_unittest.cc.s
+
+.PHONY : Reactor_unittest.s
+
+# target to generate assembly for a file
+Reactor_unittest.cc.s:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/reactor_unittest.dir/build.make chenmo/net/tests/CMakeFiles/reactor_unittest.dir/Reactor_unittest.cc.s
+.PHONY : Reactor_unittest.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -222,10 +264,14 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... reactor_unittest"
 	@echo "... eventloop_unittest"
 	@echo "... Eventloop_unittest.o"
 	@echo "... Eventloop_unittest.i"
 	@echo "... Eventloop_unittest.s"
+	@echo "... Reactor_unittest.o"
+	@echo "... Reactor_unittest.i"
+	@echo "... Reactor_unittest.s"
 .PHONY : help
 
 

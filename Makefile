@@ -194,6 +194,19 @@ chenmo_net/fast:
 .PHONY : chenmo_net/fast
 
 #=============================================================================
+# Target rules for targets named reactor_unittest
+
+# Build rule for target.
+reactor_unittest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 reactor_unittest
+.PHONY : reactor_unittest
+
+# fast build rule for target.
+reactor_unittest/fast:
+	$(MAKE) -f chenmo/net/tests/CMakeFiles/reactor_unittest.dir/build.make chenmo/net/tests/CMakeFiles/reactor_unittest.dir/build
+.PHONY : reactor_unittest/fast
+
+#=============================================================================
 # Target rules for targets named eventloop_unittest
 
 # Build rule for target.
@@ -221,6 +234,7 @@ help:
 	@echo "... test"
 	@echo "... chenmo_base"
 	@echo "... chenmo_net"
+	@echo "... reactor_unittest"
 	@echo "... eventloop_unittest"
 .PHONY : help
 

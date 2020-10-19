@@ -182,6 +182,33 @@ chenmo_net/fast:
 	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/build
 .PHONY : chenmo_net/fast
 
+Channel.o: Channel.cc.o
+
+.PHONY : Channel.o
+
+# target to build an object file
+Channel.cc.o:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/Channel.cc.o
+.PHONY : Channel.cc.o
+
+Channel.i: Channel.cc.i
+
+.PHONY : Channel.i
+
+# target to preprocess a source file
+Channel.cc.i:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/Channel.cc.i
+.PHONY : Channel.cc.i
+
+Channel.s: Channel.cc.s
+
+.PHONY : Channel.s
+
+# target to generate assembly for a file
+Channel.cc.s:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/Channel.cc.s
+.PHONY : Channel.cc.s
+
 EventLoop.o: EventLoop.cc.o
 
 .PHONY : EventLoop.o
@@ -209,6 +236,87 @@ EventLoop.cc.s:
 	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/EventLoop.cc.s
 .PHONY : EventLoop.cc.s
 
+Poller.o: Poller.cc.o
+
+.PHONY : Poller.o
+
+# target to build an object file
+Poller.cc.o:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/Poller.cc.o
+.PHONY : Poller.cc.o
+
+Poller.i: Poller.cc.i
+
+.PHONY : Poller.i
+
+# target to preprocess a source file
+Poller.cc.i:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/Poller.cc.i
+.PHONY : Poller.cc.i
+
+Poller.s: Poller.cc.s
+
+.PHONY : Poller.s
+
+# target to generate assembly for a file
+Poller.cc.s:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/Poller.cc.s
+.PHONY : Poller.cc.s
+
+poller/DefaultPoller.o: poller/DefaultPoller.cc.o
+
+.PHONY : poller/DefaultPoller.o
+
+# target to build an object file
+poller/DefaultPoller.cc.o:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/poller/DefaultPoller.cc.o
+.PHONY : poller/DefaultPoller.cc.o
+
+poller/DefaultPoller.i: poller/DefaultPoller.cc.i
+
+.PHONY : poller/DefaultPoller.i
+
+# target to preprocess a source file
+poller/DefaultPoller.cc.i:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/poller/DefaultPoller.cc.i
+.PHONY : poller/DefaultPoller.cc.i
+
+poller/DefaultPoller.s: poller/DefaultPoller.cc.s
+
+.PHONY : poller/DefaultPoller.s
+
+# target to generate assembly for a file
+poller/DefaultPoller.cc.s:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/poller/DefaultPoller.cc.s
+.PHONY : poller/DefaultPoller.cc.s
+
+poller/PollPoller.o: poller/PollPoller.cc.o
+
+.PHONY : poller/PollPoller.o
+
+# target to build an object file
+poller/PollPoller.cc.o:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/poller/PollPoller.cc.o
+.PHONY : poller/PollPoller.cc.o
+
+poller/PollPoller.i: poller/PollPoller.cc.i
+
+.PHONY : poller/PollPoller.i
+
+# target to preprocess a source file
+poller/PollPoller.cc.i:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/poller/PollPoller.cc.i
+.PHONY : poller/PollPoller.cc.i
+
+poller/PollPoller.s: poller/PollPoller.cc.s
+
+.PHONY : poller/PollPoller.s
+
+# target to generate assembly for a file
+poller/PollPoller.cc.s:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/poller/PollPoller.cc.s
+.PHONY : poller/PollPoller.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -223,9 +331,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... chenmo_net"
+	@echo "... Channel.o"
+	@echo "... Channel.i"
+	@echo "... Channel.s"
 	@echo "... EventLoop.o"
 	@echo "... EventLoop.i"
 	@echo "... EventLoop.s"
+	@echo "... Poller.o"
+	@echo "... Poller.i"
+	@echo "... Poller.s"
+	@echo "... poller/DefaultPoller.o"
+	@echo "... poller/DefaultPoller.i"
+	@echo "... poller/DefaultPoller.s"
+	@echo "... poller/PollPoller.o"
+	@echo "... poller/PollPoller.i"
+	@echo "... poller/PollPoller.s"
 .PHONY : help
 
 

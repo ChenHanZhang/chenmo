@@ -7,6 +7,10 @@ endif()
 
 set(net_SRCS
         EventLoop.cc
+        Channel.cc
+        Poller.cc
+        poller/DefaultPoller.cc
+        poller/PollPoller.cc
         )
 
 add_library(chenmo_net ${net_SRCS})
@@ -21,6 +25,8 @@ install(TARGETS chenmo_net DESTINATION lib)
 
 set(HEADERS
         EventLoop.h
+        Channel.h
+        Poller.h
         )
 install(FILES ${HEADERS} DESTINATION include/chenmo/net)
 
