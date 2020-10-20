@@ -87,12 +87,16 @@ public:
 private:
 
     void abortNotInLoopThread();
+
+    void handleRead();  // waked up 通过监听fd来实现的
+    void doPendingFunctors();
+
     void printActiveChannels() const; // DEBUG
 
     typedef std::vector<Channel*> ChannelList;
 
     bool looping_;  // 原子操作
-    bool quit_;
+    std::atomic<bool> quit_;
     bool eventHandling_;
     bool callingPendingFunctors_; /* atomic */
     int64_t iteration_;
@@ -101,7 +105,7 @@ private:
     Timestamp pollReturnTime_;
     std::unique_ptr<Poller> poller_;
     std::unique_ptr<TimerQueue> timerQueue_;
-    int wakeupFd_;
+    int wakeupFd_;  // 用于唤醒线程
     std::unique_ptr<Channel> wakeupChannel_;
     
     ChannelList activeChannels_;

@@ -30,6 +30,17 @@ __thread EventLoop* t_loopInThisThread = 0;
 
 const int kPollTimeMs = 10000;
 
+int createEventfd()
+{
+    int evtfd = ::eventfd(0, EFD_NONBLOCK | EFD_CLOEXEC);
+    if (evtfd < 0)
+    {
+        LOG_SYSERR << "Failed in eventfd";
+        abort();
+    }
+    return evtfd;
+}
+
 }  // namespace
 
 EventLoop* EventLoop::getEventLoopOfCurrentThread()
@@ -46,6 +57,7 @@ EventLoop::EventLoop()
     threadId_(CurrentThread::tid()),
     poller_(Poller::newDefaultPoller(this)),
     timerQueue_(new TimerQueue(this)),
+    wakeupFd_(createEventfd()),
     wakeupChannel_(new Channel(this, wakeupFd_)),
     currentActiveChannel_(NULL)
 {
@@ -59,12 +71,18 @@ EventLoop::EventLoop()
     {
         t_loopInThisThread = this;
     }
+    wakeupChannel_->setReadCallback(
+        std::bind(&EventLoop::handleRead, this));
+    wakeupChannel_->enableReading();
 }
 
 EventLoop::~EventLoop()
 {
     LOG_DEBUG << "EventLoop " << this << " of thread " << threadId_
               << " destructs in thread " << CurrentThread::tid();
+    wakeupChannel_->disableAll();
+    wakeupChannel_->remove();
+    ::close(wakeupFd_);
     t_loopInThisThread = NULL;
 }
 
@@ -108,7 +126,6 @@ void EventLoop::quit()
     {
         wakeup();
     }
-    
 }
 
 void EventLoop::abortNotInLoopThread()
@@ -143,6 +160,33 @@ bool EventLoop::hasChannel(Channel* channel)
     assert(channel->ownerLoop() == this);
     assertInLoopThread();
     return poller_->hasChannel(channel);
+}
+
+void EventLoop::handleRead()
+{
+    uint64_t one = 1;
+    ssize_t n = sockets::read(wakeupFd_, &one, sizeof one);
+    if (n != sizeof one)
+    {
+        LOG_ERROR << "EventLoop::handleRead() reads " << n << " bytes instead of 8";
+    }
+}
+
+void EventLoop::doPendingFunctors()
+{
+    std::vector<Functor> functors;
+    callingPendingFunctors_ = true;
+
+    {
+    MutexLockGuard lock(mutex_);
+    functors.swap(pendingFunctors_);
+    }
+
+    for (const Functor& functor : functors)
+    {
+        functor();
+    }
+    callingPendingFunctors_ = false;
 }
 
 void EventLoop::printActiveChannels() const
@@ -206,6 +250,7 @@ void EventLoop::cancel(TimerId timerId)
     return timerQueue_->cancel(timerId);
 }
 
+/// TODO 如何实现唤醒？
 void EventLoop::wakeup()
 {
     uint64_t one = 1;
