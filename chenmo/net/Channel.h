@@ -77,6 +77,7 @@ private:
     int         index_;   // used by Poller.
     bool        logHup_;
 
+    // TODO: tie_ 绑定到哪里？
     std::weak_ptr<void> tie_;
     bool tied_;
     bool eventHandling_;

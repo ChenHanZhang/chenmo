@@ -62,6 +62,7 @@ void Channel::handleEvent(Timestamp receiveTime)
     std::shared_ptr<void> guard;
     if (tied_)
     {
+        // 尝试提升 weak_ptr 指针
         guard = tie_.lock();
         if (guard)
         {
@@ -76,6 +77,7 @@ void Channel::handleEvent(Timestamp receiveTime)
 
 void Channel::handleEventWithGuard(Timestamp receiveTime)
 {
+    // 根据信号量来选择相应得处理函数
     eventHandling_ = true;
     LOG_TRACE << reventsToString();
     if ((revents_ & POLLHUP) && !(revents_ & POLLIN))
@@ -119,6 +121,8 @@ string Channel::eventsToString() const
 
 string Channel::eventsToString(int fd, int ev)
 {
+    // ostringstream 用于申请一个缓存区
+    // ostringstream 类通常用于执行 C 风格的串流的输出操作，格式化字符串，避免申请大量的缓冲区，替代 sprintf。
     std::ostringstream oss;
     oss << fd << ": ";
     if (ev & POLLIN)

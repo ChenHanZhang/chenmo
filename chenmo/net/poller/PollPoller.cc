@@ -21,7 +21,9 @@ PollPoller::~PollPoller() = default;
 
 Timestamp PollPoller::poll(int timeoutMs, ChannelList* activeChannels)
 {
+    // poll 的 timeoutMs 代表最长等待时间，负数代表无限等待
     int numEvents = ::poll(&*pollfds_.begin(), pollfds_.size(), timeoutMs);
+    // errno 是全局变量，表示上一个调用的错误代码，如果成功就为 0
     int savedErrno = errno;
     Timestamp now(Timestamp::now());
 
@@ -36,6 +38,7 @@ Timestamp PollPoller::poll(int timeoutMs, ChannelList* activeChannels)
     }
     else
     {
+        // EINTR /* Interrupted system call */
         if (savedErrno != EINTR)
         {
             errno = savedErrno;
@@ -46,6 +49,7 @@ Timestamp PollPoller::poll(int timeoutMs, ChannelList* activeChannels)
     return now;
 }
 
+// 函数后加 const 代表该函数不得修改类的成员变量
 void PollPoller::fillActiveChannels(int numEvents,
                                     ChannelList* activeChannels) const
 {
@@ -58,6 +62,7 @@ void PollPoller::fillActiveChannels(int numEvents,
             ChannelMap::const_iterator ch = channels_.find(pfd->fd);
             assert(ch != channels_.end());
             Channel* channel = ch->second;
+            // channel->fd 返回 channel 内的 fd_ 对象，这是文件描述符，在channel创建时初始化
             assert(channel->fd() == pfd->fd);
             channel->set_revents(pfd->revents);
             // pfd->revents = 0;

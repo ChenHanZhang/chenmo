@@ -40,6 +40,13 @@ class PollPoller : public Poller
   void fillActiveChannels(int numEvents,
                           ChannelList* activeChannels) const;
 
+  // pollfd
+  //
+  // struct pollfd {  
+  // int fd;        // 文件描述符  
+  // short events;  // 要求查询的事件掩码  
+  // short revents; // 实际返回的事件掩码  
+  // };  
   typedef std::vector<struct pollfd> PollFdList;
   PollFdList pollfds_;
 };
