@@ -263,6 +263,87 @@ Poller.cc.s:
 	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/Poller.cc.s
 .PHONY : Poller.cc.s
 
+SocketsOps.o: SocketsOps.cc.o
+
+.PHONY : SocketsOps.o
+
+# target to build an object file
+SocketsOps.cc.o:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/SocketsOps.cc.o
+.PHONY : SocketsOps.cc.o
+
+SocketsOps.i: SocketsOps.cc.i
+
+.PHONY : SocketsOps.i
+
+# target to preprocess a source file
+SocketsOps.cc.i:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/SocketsOps.cc.i
+.PHONY : SocketsOps.cc.i
+
+SocketsOps.s: SocketsOps.cc.s
+
+.PHONY : SocketsOps.s
+
+# target to generate assembly for a file
+SocketsOps.cc.s:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/SocketsOps.cc.s
+.PHONY : SocketsOps.cc.s
+
+Timer.o: Timer.cc.o
+
+.PHONY : Timer.o
+
+# target to build an object file
+Timer.cc.o:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/Timer.cc.o
+.PHONY : Timer.cc.o
+
+Timer.i: Timer.cc.i
+
+.PHONY : Timer.i
+
+# target to preprocess a source file
+Timer.cc.i:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/Timer.cc.i
+.PHONY : Timer.cc.i
+
+Timer.s: Timer.cc.s
+
+.PHONY : Timer.s
+
+# target to generate assembly for a file
+Timer.cc.s:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/Timer.cc.s
+.PHONY : Timer.cc.s
+
+TimerQueue.o: TimerQueue.cc.o
+
+.PHONY : TimerQueue.o
+
+# target to build an object file
+TimerQueue.cc.o:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/TimerQueue.cc.o
+.PHONY : TimerQueue.cc.o
+
+TimerQueue.i: TimerQueue.cc.i
+
+.PHONY : TimerQueue.i
+
+# target to preprocess a source file
+TimerQueue.cc.i:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/TimerQueue.cc.i
+.PHONY : TimerQueue.cc.i
+
+TimerQueue.s: TimerQueue.cc.s
+
+.PHONY : TimerQueue.s
+
+# target to generate assembly for a file
+TimerQueue.cc.s:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/TimerQueue.cc.s
+.PHONY : TimerQueue.cc.s
+
 poller/DefaultPoller.o: poller/DefaultPoller.cc.o
 
 .PHONY : poller/DefaultPoller.o
@@ -340,6 +421,15 @@ help:
 	@echo "... Poller.o"
 	@echo "... Poller.i"
 	@echo "... Poller.s"
+	@echo "... SocketsOps.o"
+	@echo "... SocketsOps.i"
+	@echo "... SocketsOps.s"
+	@echo "... Timer.o"
+	@echo "... Timer.i"
+	@echo "... Timer.s"
+	@echo "... TimerQueue.o"
+	@echo "... TimerQueue.i"
+	@echo "... TimerQueue.s"
 	@echo "... poller/DefaultPoller.o"
 	@echo "... poller/DefaultPoller.i"
 	@echo "... poller/DefaultPoller.s"

@@ -12,9 +12,11 @@
 #include "chenmo/base/Logging.h"
 #include "chenmo/net/Channel.h"
 #include "chenmo/net/Poller.h"
+#include "chenmo/net/TimerQueue.h"
+#include "chenmo/net/SocketsOps.h"
 
 #include <algorithm>
-#include <poll.h>
+
 #include <signal.h>
 #include <sys/eventfd.h>
 #include <unistd.h>
@@ -39,9 +41,12 @@ EventLoop::EventLoop()
   : looping_(false),
     quit_(false),
     eventHandling_(false),
+    callingPendingFunctors_(false),
     iteration_(0),
     threadId_(CurrentThread::tid()),
     poller_(Poller::newDefaultPoller(this)),
+    timerQueue_(new TimerQueue(this)),
+    wakeupChannel_(new Channel(this, wakeupFd_)),
     currentActiveChannel_(NULL)
 {
     LOG_DEBUG << "EventLoop created " << this << " in thread " << threadId_;
@@ -99,6 +104,11 @@ void EventLoop::loop()
 void EventLoop::quit()
 {
     quit_ = true;
+    if (!isInLoopThread())
+    {
+        wakeup();
+    }
+    
 }
 
 void EventLoop::abortNotInLoopThread()
@@ -140,5 +150,68 @@ void EventLoop::printActiveChannels() const
     for (const Channel* channel : activeChannels_)
     {
         LOG_TRACE << "{" << channel->reventsToString() << "} ";
+    }
+}
+
+void EventLoop::runInLoop(Functor cb)
+{
+    if (isInLoopThread())
+    {
+        cb();
+    }
+    else
+    {
+        queueInLoop(std::move(cb));
+    }
+}
+
+void EventLoop::queueInLoop(Functor cb)
+{
+    {
+    MutexLockGuard lock(mutex_);
+    pendingFunctors_.push_back(std::move(cb));
+    }
+
+    if (!isInLoopThread() || callingPendingFunctors_)
+    {
+        wakeup();
+    }
+}
+
+size_t EventLoop::queueSize() const
+{
+    MutexLockGuard lock(mutex_);
+    return pendingFunctors_.size();
+}
+
+TimerId EventLoop::runAt(Timestamp time, TimerCallback cb)
+{
+    return timerQueue_->addTimer(std::move(cb), time, 0.0);
+}
+
+TimerId EventLoop::runAfter(double delay, TimerCallback cb)
+{
+    Timestamp time(addTime(Timestamp::now(), delay));
+    return runAt(time, std::move(cb));
+}
+
+TimerId EventLoop::runEvery(double interval, TimerCallback cb)
+{
+    Timestamp time(addTime(Timestamp::now(), interval));
+    return timerQueue_->addTimer(std::move(cb), time, interval);
+}
+
+void EventLoop::cancel(TimerId timerId)
+{
+    return timerQueue_->cancel(timerId);
+}
+
+void EventLoop::wakeup()
+{
+    uint64_t one = 1;
+    ssize_t n = sockets::write(wakeupFd_, &one, sizeof one);
+    if (n != sizeof one)
+    {
+        LOG_ERROR << "EventLoop::wakeup() writes " << n << " bytes instead of 8";
     }
 }

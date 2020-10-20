@@ -11,6 +11,9 @@ set(net_SRCS
         Poller.cc
         poller/DefaultPoller.cc
         poller/PollPoller.cc
+        SocketsOps.cc
+        Timer.cc
+        TimerQueue.cc
         )
 
 add_library(chenmo_net ${net_SRCS})
@@ -24,9 +27,12 @@ install(TARGETS chenmo_net DESTINATION lib)
 #install(TARGETS muduo_net_cpp11 DESTINATION lib)
 
 set(HEADERS
+        Callbacks.h
         EventLoop.h
         Channel.h
+        Endian.h
         Poller.h
+        TimerId.h
         )
 install(FILES ${HEADERS} DESTINATION include/chenmo/net)
 
