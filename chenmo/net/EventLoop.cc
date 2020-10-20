@@ -113,6 +113,7 @@ void EventLoop::loop()
         }
         currentActiveChannel_ = NULL;
         eventHandling_ = false;
+        doPendingFunctors();
     }
     
     LOG_TRACE << "EventLoop " << this << " stop looping";
@@ -177,11 +178,13 @@ void EventLoop::doPendingFunctors()
     std::vector<Functor> functors;
     callingPendingFunctors_ = true;
 
+    // 如果在代码块 {} 中定义了变量，则该变量的生存周期和作用域将被限制在该代码块内
     {
     MutexLockGuard lock(mutex_);
     functors.swap(pendingFunctors_);
     }
 
+    // 上面的拷贝主要是减短临界区的长度，另外一方面是避免死锁（functor中可能再调用 queueInLoop）
     for (const Functor& functor : functors)
     {
         functor();
@@ -250,7 +253,9 @@ void EventLoop::cancel(TimerId timerId)
     return timerQueue_->cancel(timerId);
 }
 
-/// TODO 如何实现唤醒？
+/// 由于 eventloop 总是阻塞在 poll 调用中，为了能够让 IO 线程立即执行用户回调，我们需要设法唤醒它，
+/// 传统的办法是使用 pipe(2) ，IO 线程始终监听该管道的 readable 事件，在需要唤醒时往要唤醒的线程管道中写入一个字节。
+/// 现在有了 eventfd(2)，可以更加高效地唤醒线程（因为不必管理缓冲区）。
 void EventLoop::wakeup()
 {
     uint64_t one = 1;
