@@ -194,17 +194,30 @@ chenmo_net/fast:
 .PHONY : chenmo_net/fast
 
 #=============================================================================
-# Target rules for targets named reactor_unittest
+# Target rules for targets named eventloopthread_unittest
 
 # Build rule for target.
-reactor_unittest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 reactor_unittest
-.PHONY : reactor_unittest
+eventloopthread_unittest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 eventloopthread_unittest
+.PHONY : eventloopthread_unittest
 
 # fast build rule for target.
-reactor_unittest/fast:
-	$(MAKE) -f chenmo/net/tests/CMakeFiles/reactor_unittest.dir/build.make chenmo/net/tests/CMakeFiles/reactor_unittest.dir/build
-.PHONY : reactor_unittest/fast
+eventloopthread_unittest/fast:
+	$(MAKE) -f chenmo/net/tests/CMakeFiles/eventloopthread_unittest.dir/build.make chenmo/net/tests/CMakeFiles/eventloopthread_unittest.dir/build
+.PHONY : eventloopthread_unittest/fast
+
+#=============================================================================
+# Target rules for targets named channel_unittest
+
+# Build rule for target.
+channel_unittest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 channel_unittest
+.PHONY : channel_unittest
+
+# fast build rule for target.
+channel_unittest/fast:
+	$(MAKE) -f chenmo/net/tests/CMakeFiles/channel_unittest.dir/build.make chenmo/net/tests/CMakeFiles/channel_unittest.dir/build
+.PHONY : channel_unittest/fast
 
 #=============================================================================
 # Target rules for targets named eventloop_unittest
@@ -234,7 +247,8 @@ help:
 	@echo "... test"
 	@echo "... chenmo_base"
 	@echo "... chenmo_net"
-	@echo "... reactor_unittest"
+	@echo "... eventloopthread_unittest"
+	@echo "... channel_unittest"
 	@echo "... eventloop_unittest"
 .PHONY : help
 

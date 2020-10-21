@@ -2,6 +2,7 @@
 .vscode
 bin
 lib
+build
 CMakeFiles
 *.cmake
 CMakeCache.txt

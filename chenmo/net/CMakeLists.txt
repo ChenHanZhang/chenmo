@@ -6,8 +6,9 @@ if(NOT HAVE_ACCEPT4)
 endif()
 
 set(net_SRCS
-        EventLoop.cc
         Channel.cc
+        EventLoop.cc
+        EventLoopThread.cc
         Poller.cc
         poller/DefaultPoller.cc
         poller/PollPoller.cc
@@ -31,7 +32,7 @@ set(HEADERS
         EventLoop.h
         Channel.h
         Endian.h
-        Poller.h
+        EventLoopThread.h
         TimerId.h
         )
 install(FILES ${HEADERS} DESTINATION include/chenmo/net)

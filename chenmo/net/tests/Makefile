@@ -56,18 +56,6 @@ CMAKE_BINARY_DIR = /home/tfhnia/workspace/chenmo
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -135,6 +123,18 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/tfhnia/workspace/chenmo && $(CMAKE_COMMAND) -E cmake_progress_start /home/tfhnia/workspace/chenmo/CMakeFiles /home/tfhnia/workspace/chenmo/chenmo/net/tests/CMakeFiles/progress.marks
@@ -168,19 +168,34 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-chenmo/net/tests/CMakeFiles/reactor_unittest.dir/rule:
-	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f CMakeFiles/Makefile2 chenmo/net/tests/CMakeFiles/reactor_unittest.dir/rule
-.PHONY : chenmo/net/tests/CMakeFiles/reactor_unittest.dir/rule
+chenmo/net/tests/CMakeFiles/eventloopthread_unittest.dir/rule:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f CMakeFiles/Makefile2 chenmo/net/tests/CMakeFiles/eventloopthread_unittest.dir/rule
+.PHONY : chenmo/net/tests/CMakeFiles/eventloopthread_unittest.dir/rule
 
 # Convenience name for target.
-reactor_unittest: chenmo/net/tests/CMakeFiles/reactor_unittest.dir/rule
+eventloopthread_unittest: chenmo/net/tests/CMakeFiles/eventloopthread_unittest.dir/rule
 
-.PHONY : reactor_unittest
+.PHONY : eventloopthread_unittest
 
 # fast build rule for target.
-reactor_unittest/fast:
-	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/reactor_unittest.dir/build.make chenmo/net/tests/CMakeFiles/reactor_unittest.dir/build
-.PHONY : reactor_unittest/fast
+eventloopthread_unittest/fast:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/eventloopthread_unittest.dir/build.make chenmo/net/tests/CMakeFiles/eventloopthread_unittest.dir/build
+.PHONY : eventloopthread_unittest/fast
+
+# Convenience name for target.
+chenmo/net/tests/CMakeFiles/channel_unittest.dir/rule:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f CMakeFiles/Makefile2 chenmo/net/tests/CMakeFiles/channel_unittest.dir/rule
+.PHONY : chenmo/net/tests/CMakeFiles/channel_unittest.dir/rule
+
+# Convenience name for target.
+channel_unittest: chenmo/net/tests/CMakeFiles/channel_unittest.dir/rule
+
+.PHONY : channel_unittest
+
+# fast build rule for target.
+channel_unittest/fast:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/channel_unittest.dir/build.make chenmo/net/tests/CMakeFiles/channel_unittest.dir/build
+.PHONY : channel_unittest/fast
 
 # Convenience name for target.
 chenmo/net/tests/CMakeFiles/eventloop_unittest.dir/rule:
@@ -196,6 +211,60 @@ eventloop_unittest: chenmo/net/tests/CMakeFiles/eventloop_unittest.dir/rule
 eventloop_unittest/fast:
 	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/eventloop_unittest.dir/build.make chenmo/net/tests/CMakeFiles/eventloop_unittest.dir/build
 .PHONY : eventloop_unittest/fast
+
+Channel_unittest.o: Channel_unittest.cc.o
+
+.PHONY : Channel_unittest.o
+
+# target to build an object file
+Channel_unittest.cc.o:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/channel_unittest.dir/build.make chenmo/net/tests/CMakeFiles/channel_unittest.dir/Channel_unittest.cc.o
+.PHONY : Channel_unittest.cc.o
+
+Channel_unittest.i: Channel_unittest.cc.i
+
+.PHONY : Channel_unittest.i
+
+# target to preprocess a source file
+Channel_unittest.cc.i:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/channel_unittest.dir/build.make chenmo/net/tests/CMakeFiles/channel_unittest.dir/Channel_unittest.cc.i
+.PHONY : Channel_unittest.cc.i
+
+Channel_unittest.s: Channel_unittest.cc.s
+
+.PHONY : Channel_unittest.s
+
+# target to generate assembly for a file
+Channel_unittest.cc.s:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/channel_unittest.dir/build.make chenmo/net/tests/CMakeFiles/channel_unittest.dir/Channel_unittest.cc.s
+.PHONY : Channel_unittest.cc.s
+
+EventLoopThread_unittest.o: EventLoopThread_unittest.cc.o
+
+.PHONY : EventLoopThread_unittest.o
+
+# target to build an object file
+EventLoopThread_unittest.cc.o:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/eventloopthread_unittest.dir/build.make chenmo/net/tests/CMakeFiles/eventloopthread_unittest.dir/EventLoopThread_unittest.cc.o
+.PHONY : EventLoopThread_unittest.cc.o
+
+EventLoopThread_unittest.i: EventLoopThread_unittest.cc.i
+
+.PHONY : EventLoopThread_unittest.i
+
+# target to preprocess a source file
+EventLoopThread_unittest.cc.i:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/eventloopthread_unittest.dir/build.make chenmo/net/tests/CMakeFiles/eventloopthread_unittest.dir/EventLoopThread_unittest.cc.i
+.PHONY : EventLoopThread_unittest.cc.i
+
+EventLoopThread_unittest.s: EventLoopThread_unittest.cc.s
+
+.PHONY : EventLoopThread_unittest.s
+
+# target to generate assembly for a file
+EventLoopThread_unittest.cc.s:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/eventloopthread_unittest.dir/build.make chenmo/net/tests/CMakeFiles/eventloopthread_unittest.dir/EventLoopThread_unittest.cc.s
+.PHONY : EventLoopThread_unittest.cc.s
 
 Eventloop_unittest.o: Eventloop_unittest.cc.o
 
@@ -224,54 +293,31 @@ Eventloop_unittest.cc.s:
 	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/eventloop_unittest.dir/build.make chenmo/net/tests/CMakeFiles/eventloop_unittest.dir/Eventloop_unittest.cc.s
 .PHONY : Eventloop_unittest.cc.s
 
-Reactor_unittest.o: Reactor_unittest.cc.o
-
-.PHONY : Reactor_unittest.o
-
-# target to build an object file
-Reactor_unittest.cc.o:
-	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/reactor_unittest.dir/build.make chenmo/net/tests/CMakeFiles/reactor_unittest.dir/Reactor_unittest.cc.o
-.PHONY : Reactor_unittest.cc.o
-
-Reactor_unittest.i: Reactor_unittest.cc.i
-
-.PHONY : Reactor_unittest.i
-
-# target to preprocess a source file
-Reactor_unittest.cc.i:
-	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/reactor_unittest.dir/build.make chenmo/net/tests/CMakeFiles/reactor_unittest.dir/Reactor_unittest.cc.i
-.PHONY : Reactor_unittest.cc.i
-
-Reactor_unittest.s: Reactor_unittest.cc.s
-
-.PHONY : Reactor_unittest.s
-
-# target to generate assembly for a file
-Reactor_unittest.cc.s:
-	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/reactor_unittest.dir/build.make chenmo/net/tests/CMakeFiles/reactor_unittest.dir/Reactor_unittest.cc.s
-.PHONY : Reactor_unittest.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... reactor_unittest"
+	@echo "... install/strip"
+	@echo "... eventloopthread_unittest"
+	@echo "... channel_unittest"
 	@echo "... eventloop_unittest"
+	@echo "... Channel_unittest.o"
+	@echo "... Channel_unittest.i"
+	@echo "... Channel_unittest.s"
+	@echo "... EventLoopThread_unittest.o"
+	@echo "... EventLoopThread_unittest.i"
+	@echo "... EventLoopThread_unittest.s"
 	@echo "... Eventloop_unittest.o"
 	@echo "... Eventloop_unittest.i"
 	@echo "... Eventloop_unittest.s"
-	@echo "... Reactor_unittest.o"
-	@echo "... Reactor_unittest.i"
-	@echo "... Reactor_unittest.s"
 .PHONY : help
 
 

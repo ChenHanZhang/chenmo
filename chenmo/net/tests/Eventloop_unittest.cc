@@ -14,6 +14,8 @@ void threadFunc() {
     printf("threadFunc(): pid = %d, tid = %d\n", 
         getpid(), chenmo::CurrentThread::tid());
     
+    sleep(10);
+
     chenmo::net::EventLoop loop;
     loop.loop();
 }
@@ -33,6 +35,9 @@ int main() {
 
     chenmo::Thread thread(threadFunc);
     thread.start();
+
+    printf("main(): pid = %d, tid = %d\n",
+    getpid(), chenmo::CurrentThread::tid());
 
     loop.loop();
     pthread_exit(NULL);

@@ -182,12 +182,19 @@ void Thread::start()
     // 第二个参数用来设置线程属性
     // 第三个参数是线程运行函数的起始地址
     // 第四个参数是运行函数的参数
+
+    // pthread_create 会执行 detail::startThread 函数，并且以 data 作为参数
+    // 其中， data 中有 latch_ 变量，这个变量是当前 Thread 的成员变量的别名，
+    // 在 startThread 函数中，将 data 转为 ThreadData 类型，然后调用其 runInThread 函数，
+    // 在 runInThread 函数中， latch_ 将会被 countDown()，这样，下面 else 中的 latch_.wait() 得以返回
     if (pthread_create(&pthreadId_, NULL, &detail::startThread, data))
     {
         started_ = false;
         delete data;
         LOG_SYSFATAL << "Failed in pthread_create";
     }else{
+        // 这里在父线程中会等待子线程中将 latch_ 减一
+        // 当进入到这里时，子线程已经启动了，父线程会空等至 pthread_create 调用了函数
         latch_.wait();
         assert(tid_ > 0);
     }
