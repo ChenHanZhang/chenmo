@@ -168,6 +168,36 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+chenmo/net/tests/CMakeFiles/eventloopthreadpool_unittest.dir/rule:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f CMakeFiles/Makefile2 chenmo/net/tests/CMakeFiles/eventloopthreadpool_unittest.dir/rule
+.PHONY : chenmo/net/tests/CMakeFiles/eventloopthreadpool_unittest.dir/rule
+
+# Convenience name for target.
+eventloopthreadpool_unittest: chenmo/net/tests/CMakeFiles/eventloopthreadpool_unittest.dir/rule
+
+.PHONY : eventloopthreadpool_unittest
+
+# fast build rule for target.
+eventloopthreadpool_unittest/fast:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/eventloopthreadpool_unittest.dir/build.make chenmo/net/tests/CMakeFiles/eventloopthreadpool_unittest.dir/build
+.PHONY : eventloopthreadpool_unittest/fast
+
+# Convenience name for target.
+chenmo/net/tests/CMakeFiles/echoserver_unittest.dir/rule:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f CMakeFiles/Makefile2 chenmo/net/tests/CMakeFiles/echoserver_unittest.dir/rule
+.PHONY : chenmo/net/tests/CMakeFiles/echoserver_unittest.dir/rule
+
+# Convenience name for target.
+echoserver_unittest: chenmo/net/tests/CMakeFiles/echoserver_unittest.dir/rule
+
+.PHONY : echoserver_unittest
+
+# fast build rule for target.
+echoserver_unittest/fast:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/echoserver_unittest.dir/build.make chenmo/net/tests/CMakeFiles/echoserver_unittest.dir/build
+.PHONY : echoserver_unittest/fast
+
+# Convenience name for target.
 chenmo/net/tests/CMakeFiles/acceptor_unittest.dir/rule:
 	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f CMakeFiles/Makefile2 chenmo/net/tests/CMakeFiles/acceptor_unittest.dir/rule
 .PHONY : chenmo/net/tests/CMakeFiles/acceptor_unittest.dir/rule
@@ -281,6 +311,60 @@ Channel_unittest.cc.s:
 	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/channel_unittest.dir/build.make chenmo/net/tests/CMakeFiles/channel_unittest.dir/Channel_unittest.cc.s
 .PHONY : Channel_unittest.cc.s
 
+EchoServer_unittest.o: EchoServer_unittest.cc.o
+
+.PHONY : EchoServer_unittest.o
+
+# target to build an object file
+EchoServer_unittest.cc.o:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/echoserver_unittest.dir/build.make chenmo/net/tests/CMakeFiles/echoserver_unittest.dir/EchoServer_unittest.cc.o
+.PHONY : EchoServer_unittest.cc.o
+
+EchoServer_unittest.i: EchoServer_unittest.cc.i
+
+.PHONY : EchoServer_unittest.i
+
+# target to preprocess a source file
+EchoServer_unittest.cc.i:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/echoserver_unittest.dir/build.make chenmo/net/tests/CMakeFiles/echoserver_unittest.dir/EchoServer_unittest.cc.i
+.PHONY : EchoServer_unittest.cc.i
+
+EchoServer_unittest.s: EchoServer_unittest.cc.s
+
+.PHONY : EchoServer_unittest.s
+
+# target to generate assembly for a file
+EchoServer_unittest.cc.s:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/echoserver_unittest.dir/build.make chenmo/net/tests/CMakeFiles/echoserver_unittest.dir/EchoServer_unittest.cc.s
+.PHONY : EchoServer_unittest.cc.s
+
+EventLoopThreadPool_unittest.o: EventLoopThreadPool_unittest.cc.o
+
+.PHONY : EventLoopThreadPool_unittest.o
+
+# target to build an object file
+EventLoopThreadPool_unittest.cc.o:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/eventloopthreadpool_unittest.dir/build.make chenmo/net/tests/CMakeFiles/eventloopthreadpool_unittest.dir/EventLoopThreadPool_unittest.cc.o
+.PHONY : EventLoopThreadPool_unittest.cc.o
+
+EventLoopThreadPool_unittest.i: EventLoopThreadPool_unittest.cc.i
+
+.PHONY : EventLoopThreadPool_unittest.i
+
+# target to preprocess a source file
+EventLoopThreadPool_unittest.cc.i:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/eventloopthreadpool_unittest.dir/build.make chenmo/net/tests/CMakeFiles/eventloopthreadpool_unittest.dir/EventLoopThreadPool_unittest.cc.i
+.PHONY : EventLoopThreadPool_unittest.cc.i
+
+EventLoopThreadPool_unittest.s: EventLoopThreadPool_unittest.cc.s
+
+.PHONY : EventLoopThreadPool_unittest.s
+
+# target to generate assembly for a file
+EventLoopThreadPool_unittest.cc.s:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/eventloopthreadpool_unittest.dir/build.make chenmo/net/tests/CMakeFiles/eventloopthreadpool_unittest.dir/EventLoopThreadPool_unittest.cc.s
+.PHONY : EventLoopThreadPool_unittest.cc.s
+
 EventLoopThread_unittest.o: EventLoopThread_unittest.cc.o
 
 .PHONY : EventLoopThread_unittest.o
@@ -347,7 +431,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... eventloopthreadpool_unittest"
 	@echo "... install/strip"
+	@echo "... echoserver_unittest"
 	@echo "... acceptor_unittest"
 	@echo "... eventloopthread_unittest"
 	@echo "... channel_unittest"
@@ -358,6 +444,12 @@ help:
 	@echo "... Channel_unittest.o"
 	@echo "... Channel_unittest.i"
 	@echo "... Channel_unittest.s"
+	@echo "... EchoServer_unittest.o"
+	@echo "... EchoServer_unittest.i"
+	@echo "... EchoServer_unittest.s"
+	@echo "... EventLoopThreadPool_unittest.o"
+	@echo "... EventLoopThreadPool_unittest.i"
+	@echo "... EventLoopThreadPool_unittest.s"
 	@echo "... EventLoopThread_unittest.o"
 	@echo "... EventLoopThread_unittest.i"
 	@echo "... EventLoopThread_unittest.s"

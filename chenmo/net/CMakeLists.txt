@@ -7,15 +7,19 @@ endif()
 
 set(net_SRCS
         Acceptor.cc
+        Buffer.cc
         Channel.cc
         EventLoop.cc
         EventLoopThread.cc
+        EventLoopThreadPool.cc
         InetAddress.cc
         Poller.cc
         poller/DefaultPoller.cc
         poller/PollPoller.cc
         Socket.cc
         SocketsOps.cc
+        TcpConnection.cc
+        TcpServer.cc
         Timer.cc
         TimerQueue.cc
         )
@@ -31,12 +35,15 @@ install(TARGETS chenmo_net DESTINATION lib)
 #install(TARGETS muduo_net_cpp11 DESTINATION lib)
 
 set(HEADERS
+        Buffer.h
         Callbacks.h
         Channel.h
         Endian.h
         EventLoop.h
         EventLoopThread.h
         InetAddress.h
+        TcpConnection.h
+        TcpServer.h
         TimerId.h
         )
 install(FILES ${HEADERS} DESTINATION include/chenmo/net)

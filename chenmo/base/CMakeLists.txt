@@ -1,14 +1,14 @@
 set(base_SRCS
+        Condition.cc
+        CountDownLatch.cc
         CurrentThread.cc
         Date.cc
+        Exception.cc
         Logging.cc
         LogStream.cc
         Timestamp.cc
         TimeZone.cc
-        Condition.cc
-        CountDownLatch.cc
         Date.cc
-        Exception.cc
         Thread.cc
         )
 

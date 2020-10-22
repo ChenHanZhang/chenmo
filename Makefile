@@ -194,6 +194,32 @@ chenmo_net/fast:
 .PHONY : chenmo_net/fast
 
 #=============================================================================
+# Target rules for targets named eventloopthreadpool_unittest
+
+# Build rule for target.
+eventloopthreadpool_unittest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 eventloopthreadpool_unittest
+.PHONY : eventloopthreadpool_unittest
+
+# fast build rule for target.
+eventloopthreadpool_unittest/fast:
+	$(MAKE) -f chenmo/net/tests/CMakeFiles/eventloopthreadpool_unittest.dir/build.make chenmo/net/tests/CMakeFiles/eventloopthreadpool_unittest.dir/build
+.PHONY : eventloopthreadpool_unittest/fast
+
+#=============================================================================
+# Target rules for targets named echoserver_unittest
+
+# Build rule for target.
+echoserver_unittest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 echoserver_unittest
+.PHONY : echoserver_unittest
+
+# fast build rule for target.
+echoserver_unittest/fast:
+	$(MAKE) -f chenmo/net/tests/CMakeFiles/echoserver_unittest.dir/build.make chenmo/net/tests/CMakeFiles/echoserver_unittest.dir/build
+.PHONY : echoserver_unittest/fast
+
+#=============================================================================
 # Target rules for targets named acceptor_unittest
 
 # Build rule for target.
@@ -260,6 +286,8 @@ help:
 	@echo "... test"
 	@echo "... chenmo_base"
 	@echo "... chenmo_net"
+	@echo "... eventloopthreadpool_unittest"
+	@echo "... echoserver_unittest"
 	@echo "... acceptor_unittest"
 	@echo "... eventloopthread_unittest"
 	@echo "... channel_unittest"
