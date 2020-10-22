@@ -6,12 +6,15 @@ if(NOT HAVE_ACCEPT4)
 endif()
 
 set(net_SRCS
+        Acceptor.cc
         Channel.cc
         EventLoop.cc
         EventLoopThread.cc
+        InetAddress.cc
         Poller.cc
         poller/DefaultPoller.cc
         poller/PollPoller.cc
+        Socket.cc
         SocketsOps.cc
         Timer.cc
         TimerQueue.cc
@@ -29,10 +32,11 @@ install(TARGETS chenmo_net DESTINATION lib)
 
 set(HEADERS
         Callbacks.h
-        EventLoop.h
         Channel.h
         Endian.h
+        EventLoop.h
         EventLoopThread.h
+        InetAddress.h
         TimerId.h
         )
 install(FILES ${HEADERS} DESTINATION include/chenmo/net)

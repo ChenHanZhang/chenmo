@@ -194,6 +194,19 @@ chenmo_net/fast:
 .PHONY : chenmo_net/fast
 
 #=============================================================================
+# Target rules for targets named acceptor_unittest
+
+# Build rule for target.
+acceptor_unittest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 acceptor_unittest
+.PHONY : acceptor_unittest
+
+# fast build rule for target.
+acceptor_unittest/fast:
+	$(MAKE) -f chenmo/net/tests/CMakeFiles/acceptor_unittest.dir/build.make chenmo/net/tests/CMakeFiles/acceptor_unittest.dir/build
+.PHONY : acceptor_unittest/fast
+
+#=============================================================================
 # Target rules for targets named eventloopthread_unittest
 
 # Build rule for target.
@@ -247,6 +260,7 @@ help:
 	@echo "... test"
 	@echo "... chenmo_base"
 	@echo "... chenmo_net"
+	@echo "... acceptor_unittest"
 	@echo "... eventloopthread_unittest"
 	@echo "... channel_unittest"
 	@echo "... eventloop_unittest"

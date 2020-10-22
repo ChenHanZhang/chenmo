@@ -182,6 +182,33 @@ chenmo_net/fast:
 	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/build
 .PHONY : chenmo_net/fast
 
+Acceptor.o: Acceptor.cc.o
+
+.PHONY : Acceptor.o
+
+# target to build an object file
+Acceptor.cc.o:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/Acceptor.cc.o
+.PHONY : Acceptor.cc.o
+
+Acceptor.i: Acceptor.cc.i
+
+.PHONY : Acceptor.i
+
+# target to preprocess a source file
+Acceptor.cc.i:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/Acceptor.cc.i
+.PHONY : Acceptor.cc.i
+
+Acceptor.s: Acceptor.cc.s
+
+.PHONY : Acceptor.s
+
+# target to generate assembly for a file
+Acceptor.cc.s:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/Acceptor.cc.s
+.PHONY : Acceptor.cc.s
+
 Channel.o: Channel.cc.o
 
 .PHONY : Channel.o
@@ -263,6 +290,33 @@ EventLoopThread.cc.s:
 	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/EventLoopThread.cc.s
 .PHONY : EventLoopThread.cc.s
 
+InetAddress.o: InetAddress.cc.o
+
+.PHONY : InetAddress.o
+
+# target to build an object file
+InetAddress.cc.o:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/InetAddress.cc.o
+.PHONY : InetAddress.cc.o
+
+InetAddress.i: InetAddress.cc.i
+
+.PHONY : InetAddress.i
+
+# target to preprocess a source file
+InetAddress.cc.i:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/InetAddress.cc.i
+.PHONY : InetAddress.cc.i
+
+InetAddress.s: InetAddress.cc.s
+
+.PHONY : InetAddress.s
+
+# target to generate assembly for a file
+InetAddress.cc.s:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/InetAddress.cc.s
+.PHONY : InetAddress.cc.s
+
 Poller.o: Poller.cc.o
 
 .PHONY : Poller.o
@@ -289,6 +343,33 @@ Poller.s: Poller.cc.s
 Poller.cc.s:
 	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/Poller.cc.s
 .PHONY : Poller.cc.s
+
+Socket.o: Socket.cc.o
+
+.PHONY : Socket.o
+
+# target to build an object file
+Socket.cc.o:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/Socket.cc.o
+.PHONY : Socket.cc.o
+
+Socket.i: Socket.cc.i
+
+.PHONY : Socket.i
+
+# target to preprocess a source file
+Socket.cc.i:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/Socket.cc.i
+.PHONY : Socket.cc.i
+
+Socket.s: Socket.cc.s
+
+.PHONY : Socket.s
+
+# target to generate assembly for a file
+Socket.cc.s:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/CMakeFiles/chenmo_net.dir/build.make chenmo/net/CMakeFiles/chenmo_net.dir/Socket.cc.s
+.PHONY : Socket.cc.s
 
 SocketsOps.o: SocketsOps.cc.o
 
@@ -439,6 +520,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... chenmo_net"
+	@echo "... Acceptor.o"
+	@echo "... Acceptor.i"
+	@echo "... Acceptor.s"
 	@echo "... Channel.o"
 	@echo "... Channel.i"
 	@echo "... Channel.s"
@@ -448,9 +532,15 @@ help:
 	@echo "... EventLoopThread.o"
 	@echo "... EventLoopThread.i"
 	@echo "... EventLoopThread.s"
+	@echo "... InetAddress.o"
+	@echo "... InetAddress.i"
+	@echo "... InetAddress.s"
 	@echo "... Poller.o"
 	@echo "... Poller.i"
 	@echo "... Poller.s"
+	@echo "... Socket.o"
+	@echo "... Socket.i"
+	@echo "... Socket.s"
 	@echo "... SocketsOps.o"
 	@echo "... SocketsOps.i"
 	@echo "... SocketsOps.s"

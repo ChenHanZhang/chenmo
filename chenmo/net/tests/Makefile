@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+chenmo/net/tests/CMakeFiles/acceptor_unittest.dir/rule:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f CMakeFiles/Makefile2 chenmo/net/tests/CMakeFiles/acceptor_unittest.dir/rule
+.PHONY : chenmo/net/tests/CMakeFiles/acceptor_unittest.dir/rule
+
+# Convenience name for target.
+acceptor_unittest: chenmo/net/tests/CMakeFiles/acceptor_unittest.dir/rule
+
+.PHONY : acceptor_unittest
+
+# fast build rule for target.
+acceptor_unittest/fast:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/acceptor_unittest.dir/build.make chenmo/net/tests/CMakeFiles/acceptor_unittest.dir/build
+.PHONY : acceptor_unittest/fast
+
+# Convenience name for target.
 chenmo/net/tests/CMakeFiles/eventloopthread_unittest.dir/rule:
 	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f CMakeFiles/Makefile2 chenmo/net/tests/CMakeFiles/eventloopthread_unittest.dir/rule
 .PHONY : chenmo/net/tests/CMakeFiles/eventloopthread_unittest.dir/rule
@@ -211,6 +226,33 @@ eventloop_unittest: chenmo/net/tests/CMakeFiles/eventloop_unittest.dir/rule
 eventloop_unittest/fast:
 	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/eventloop_unittest.dir/build.make chenmo/net/tests/CMakeFiles/eventloop_unittest.dir/build
 .PHONY : eventloop_unittest/fast
+
+Acceptor_unittest.o: Acceptor_unittest.cc.o
+
+.PHONY : Acceptor_unittest.o
+
+# target to build an object file
+Acceptor_unittest.cc.o:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/acceptor_unittest.dir/build.make chenmo/net/tests/CMakeFiles/acceptor_unittest.dir/Acceptor_unittest.cc.o
+.PHONY : Acceptor_unittest.cc.o
+
+Acceptor_unittest.i: Acceptor_unittest.cc.i
+
+.PHONY : Acceptor_unittest.i
+
+# target to preprocess a source file
+Acceptor_unittest.cc.i:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/acceptor_unittest.dir/build.make chenmo/net/tests/CMakeFiles/acceptor_unittest.dir/Acceptor_unittest.cc.i
+.PHONY : Acceptor_unittest.cc.i
+
+Acceptor_unittest.s: Acceptor_unittest.cc.s
+
+.PHONY : Acceptor_unittest.s
+
+# target to generate assembly for a file
+Acceptor_unittest.cc.s:
+	cd /home/tfhnia/workspace/chenmo && $(MAKE) -f chenmo/net/tests/CMakeFiles/acceptor_unittest.dir/build.make chenmo/net/tests/CMakeFiles/acceptor_unittest.dir/Acceptor_unittest.cc.s
+.PHONY : Acceptor_unittest.cc.s
 
 Channel_unittest.o: Channel_unittest.cc.o
 
@@ -306,9 +348,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... install/strip"
+	@echo "... acceptor_unittest"
 	@echo "... eventloopthread_unittest"
 	@echo "... channel_unittest"
 	@echo "... eventloop_unittest"
+	@echo "... Acceptor_unittest.o"
+	@echo "... Acceptor_unittest.i"
+	@echo "... Acceptor_unittest.s"
 	@echo "... Channel_unittest.o"
 	@echo "... Channel_unittest.i"
 	@echo "... Channel_unittest.s"
